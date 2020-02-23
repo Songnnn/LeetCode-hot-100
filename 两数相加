@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int getNum()
+{
+    int num;
+    int sum=0;
+    int dight=1;
+    getchar();//左括号
+    while( 1 )
+    {
+        scanf("%d",&num);
+        sum=sum+num*dight;
+        dight=dight*10;
+        if( getchar()==')' ) break;
+        else for( int i=0 ; i<3 ; i++ ) getchar();
+    }
+    return sum;
+}
+
+
+int main()
+{
+    int a,b;
+    a=getNum();
+    for( int i=0 ; i<3 ; i++ ) getchar();
+    b=getNum();
+
+    int c=a+b;
+    while( c )
+    {
+        printf("%d",c%10);
+        if(c>=10) printf(" -> ");
+        c=c/10;
+    }
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
